@@ -922,4 +922,5 @@ button .linkbtn{
     background-color: lightblue;
     left: 45%;
     border-radius: 10%;
+    cursor: pointer;
 }
