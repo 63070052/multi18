@@ -128,7 +128,7 @@ button .linkbtn{
 .loader_bg{
     position: fixed;
     z-index: 999999;
-    background: #8CE2D0;
+    background: black;
     width: 100%;
     height: 100%;
 }
