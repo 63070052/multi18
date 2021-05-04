@@ -913,3 +913,13 @@ div.boong.png, div.bubble2, div.bubble3, div.bubble4{
     width:100px;
     height: 25px;
 }
+
+button .linkbtn{
+    position: absolute;
+    border: 2px solid black;
+    width: 100px;
+    height: 25px;
+    background-color: lightblue;
+    left: 45%;
+    border-radius: 10%;
+}
