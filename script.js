@@ -115,7 +115,3 @@ setInterval(() => {//Condition Gameplay(Check Miss)
   }
 }, value);
 
-
-setTimeout(function () {
-		$('.loader_bg').fadeToggle();
-	}, 2000);
