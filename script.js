@@ -115,6 +115,12 @@ setInterval(() => {//Condition Gameplay(Check Miss)
   }
 }, value);
 
+// time set loader page
+setTimeout(function(){
+  $('.loader_bg').fadeToggle()
+}, 3000);
+////////////
+
 
 
 
