@@ -114,3 +114,8 @@ setInterval(() => {//Condition Gameplay(Check Miss)
     document.getElementById("block").style.animation = "slide 0.75s infinite";
   }
 }, value);
+
+
+setTimeout(function () {
+		$('.loader_bg').fadeToggle();
+	}, 2000);
