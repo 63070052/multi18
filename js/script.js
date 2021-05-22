@@ -52,7 +52,7 @@ function reveal() {
     var revealers = document.querySelector('.scrolling');
     var plastic = document.querySelector('.plastic-bag');
     var windowheight = window.innerHeight;
-    var revealertop = revealers.getBoundingClientRect().top;
+    var revealertop = revealers. getBoundingClientRect().top;
     var revealerbottom = revealers.getBoundingClientRect().bottom;
     console.log(revealertop);
     console.log(revealerbottom);
@@ -107,9 +107,52 @@ function dropFunction() {
 //         }
 // }
 // alert
-function fn1(){
-  var str = document.getElementById("text-box2").value;
-  alert("ขอบคุณสําหรับความคิดเห็นครับ/ค่ะ คุณ "+str);
-}
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+  apiKey: "AIzaSyCTWX8XZ3vuO8j43lx5oK28O6p8nd0yd2I",
+  authDomain: "mt-final-8b4db.firebaseapp.com",
+  projectId: "mt-final-8b4db",
+  storageBucket: "mt-final-8b4db.appspot.com",
+  messagingSenderId: "918072828138",
+  appId: "1:918072828138:web:bf51fcbeee81e195a1f793",
+  measurementId: "G-0GH1DXLL07"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+ 
+var firestore = firebase.firestore();
+const docRef = firestore.doc("samples/txt");
+const outputHeader = document.querySelector("#hotDogOutput");
+const inputTextField = document.querySelector("#latestHotDogStatus");
+const saveButton = document.querySelector("#saveButton");
+
+saveButton.addEventListener("click", function(){
+  const textToSave = inputTextField.value;
+  console.log("I am going to save " + textToSave + " to Firestore");
+  docRef.set({
+      hotDogStatus: textToSave
+  }).then(function(){
+      console.log("Status saved");
+  }).catch(function(error){
+      console.log("Got an error: ", error);
+  });
+})
+
+const loadButton = document.querySelector("#loadButton");
+loadButton.addEventListener("click", function(){
+  docRef.get().then(function(doc){
+      if (doc && doc.exists){
+          const myData = doc.data();
+          outputHeader.innerText = "Status: " + myData.hotDogStatus;
+      }
+  }).catch(function(error){
+      console.log("Got an error: ", error);
+  });
+})
+
+
 
 
