@@ -9,6 +9,9 @@
     format("truetype"), url("//db.onlinewebfonts.com/t/9a4b138bd9c8e1eba20dbd6a0bb1d832.svg#Cooper Black") 
     format("svg"); 
 } */
+:root{
+    --txt:"";
+}
 @font-face {
     font-family: rpsw;
     src: url(../fonts/cooper.ttf);
@@ -16,6 +19,14 @@
 @font-face{
     font-family: th sarabun psk;
     src: url(../fonts/Sarabun-Light.ttf);
+}
+@font-face{
+    font-family: prompt;
+    src: url(../fonts/Prompt-Light.ttf);
+}
+@font-face{
+    font-family: prompt-cause;
+    src: url(../fonts/Prompt-Regular.ttf);
 }
 *{
     margin: 0;
@@ -52,54 +63,111 @@ p{
 section{
     position: relative;
 }
-
-/* Pre Loader Start Here na krub*/
-.loader_bg{
+#loading{
     position: fixed;
-    z-index: 999999;
-    background: lightblue;
-    width: 100%;
-    height: 100%;
-}
-.loader{
-    border: 0 solid transparent;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: calc(50vh - 75px);
-    left: calc(50vw -  75px);
-}
-.loader:before, .loader:after{
-    content: '';
-    border: 1em solid whitesmoke;
-    border-radius: 50%;
-    width: inherit;
-    height: inherit;
-    position: absolute;
     top: 0;
     left: 0;
-    animation: loader 2s linear infinite;
-    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #94daeebd;
+    opacity: 1;
+    transition: all 2s;
+    z-index: 5;
 }
-.loader:before{
-    animation-delay: .5s;
+#loadElement{
+    text-align: center;
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-@keyframes loader {
-    0%{
-        transform: scale(0);
-        opacity: 0;
+#loader {
+    border: 16px solid #ededed;
+    border-radius: 50%; 
+    width: 50%;
+    height: 50%;
+    border-top: 16px solid #f04342;
+    animation: spin 3s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* #water{
+    width: 0%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: red;
+    animation: water-loading 3s linear infinite;
+}
+@keyframes water-loading{
     50%{
-        opacity: 1;
+        width: 50%;
     }
     100%{
-        transform: scale(1);
+        width: 100%;
+    }
+} */
+.loading-pulse{
+    height: 10vh;
+    position: absolute;
+}
+.loading-pulse:nth-child(1):after{
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.693);
+    border: 10px solid rgb(177, 213, 220);
+    opacity: 70%;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulse 1.3s ease-out infinite;
+}
+.loading-pulse:nth-child(2):after{
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.672);
+    border: 10px solid rgb(177, 213, 220);
+    opacity: 70%;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulse 1.7s ease-out infinite;
+}
+.loading-pulse:nth-child(3):after{
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.741);
+    opacity: 70%;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulse 1.3s ease-out infinite;
+}
+@keyframes pulse {
+    0% {
+        opacity: 30%;
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    50% {
+        opacity: 10%;
+    }
+    100% {
         opacity: 0;
+        width: 80rem;
+        height: 80rem;
     }
 }
-/* Sed laew Yeh!!*/
-
 #page1{
     height: 620vh;
 }
@@ -242,28 +310,35 @@ p.bin{
     top: 47%; 
     left: 30%;
     color: #505189;
+    font-family: prompt;
     font-weight: 600;
     font-size: 3.3vw;
+    letter-spacing: 1px;
     position: absolute;
 }
-.btn-click{
+.drop-slide{
     top: 49%;
     left: 42%;
-    width: 16%;
-    height: 1.7%;
-    color: #e7dacb;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 3.6vw;
-    font-family: rpsw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    position: absolute;
-    background-position: center;
-    background-image: url(../img/click.png);
+    width: 15%;
+    height: 30%;
+    opacity: 0;
+    background-image: url(../img/แก้วน้าม.png);
+    transition: all 1s;
+    animation: down-drop 5s ease-in;
+    animation-delay: 4s;
+    z-index: 6;
     
+}
+.test-animation{
+    animation: down-drop 5s ease-in-out;
+}
+@keyframes down-drop {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(1000%);
+    }
 }
 .coconut-tree{
     top: 45%;
@@ -284,14 +359,15 @@ p.cause{
     top: 64%;
     left: 60%;
     color: #505189;
-    font-weight: 600;
-    font-size: 7vw;
+    font-family: prompt-cause;
+    font-weight: 500;
+    font-size: 6.5vw;
     position: absolute; 
 }
 p.trash-sea,
 p.animal-water {
-    color: #505189;
-    font-size: 2.8vw;
+    color: #8b542c;
+    font-size: 2vw;
     font-weight: 600;
     position: absolute; 
 }
@@ -303,8 +379,8 @@ p.animal-water {
     position: absolute;
 }
 .dot{
-    width: 2.1875vw;
-    height: 2.1875vw;
+    width: 2vw;
+    height: 2vw;
     position: absolute;
     background-color: #545C93;
     border-radius: 100%;
@@ -368,7 +444,7 @@ p.information{
     width: 30%;
     font-size: 1.7vw;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     line-height: 1.5;
     position: absolute;
 }
@@ -463,8 +539,8 @@ div.arrow-left{
     border-bottom: 3.125vw solid transparent;
     position: absolute;
     transition: all 0s;
-    z-index: 1;
     cursor: pointer;
+    z-index: 1;
 }
 div.arrow-right {
     top: 40%;
@@ -476,8 +552,8 @@ div.arrow-right {
     border-bottom: 3.125vw solid transparent;
     position: absolute;
     transition: all 0s;
-    z-index: 1;
     cursor: pointer;
+    z-index: 1;
 }
 div.arrow-right:hover{
     border-left: 5vw solid #FAD794;
@@ -542,6 +618,7 @@ p.caption{
     font-size: 3.3vw;
     font-weight: 600;
     text-align: center;
+    letter-spacing: 1px;
     position: absolute;
 }
 p.quote{
@@ -583,7 +660,6 @@ p.quote::after{
     height: 400vh;
     overflow: hidden;
     position: relative;
-    /* border: 2px solid black; */
 }
 .only-head-sea{
     width: 100%;
@@ -758,161 +834,111 @@ div.line-block{
     background-color: #495679; 
     position: absolute;
 }
-@keyframes drop {
-    0% {
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    95% {
-        opacity: 1;
-    }
-    100% {
-        transform: translatey(55vw);
-        opacity: 0;
-    }
-}
-div.testdrop{
-    width: 15vw;
-    height: 30vh;
-}
-.testdrop{
-    display:none;
-    position: absolute;
-    background-image: url(/img/แก้วน้าม.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+.background-block{
+    top: 0;
+    width: 100%;
     height: 100%;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    animation: below 1s;
+}
+@keyframes below{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#block-sign{
+    width: 45%;
+    height: 30%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.text-sign{
+    bottom: 0;
+    text-align: center;
+    color: white;
+    font-size: 2.5vw;
+    position: absolute;
+}
+@keyframes text-loi{
+    0%{
+        bottom: var(--loi1);
+    }
+}
+#input-comment{
+    top: 35%;
     width: 50%;
-    z-index: 99;
-    left: 0%;
-    animation:drop;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    animation-delay: 0;
-    opacity: 0;
-    /* border: 1px solid #4CAF50; */
-  }
-
-  .boong.png{
+    height: 12%;
+    font-size: 1.2vw;
+    padding: 3%;
+    outline: none;
+    border: 2px solid #EBECF0;
+    border-radius: 1vw;
     position: absolute;
-    background-image:url(/img/boong.png);
-    background-repeat: no-repeat;
-    background-size: 100% 50%;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    bottom: 0;
-    right: 20%;
-    animation-name: bubble;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-delay: -2s;
-    opacity: 0.5;
+    background: rgba(196, 191, 191, 0.275);
+    transition: all 0.3s;
 }
-
-
-.bubble2{
+#input-comment,
+#input-comment::placeholder{
+    color: rgba(255, 255, 255, 0.672);
+}
+#input-comment:focus{
+    border: 2px solid #914725 ;
+}
+.btnn{
+    bottom: 0;
     position: absolute;
-    background-image:url(/img/boong.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 50%;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    bottom: 0;
-    right: 50%;
-    animation-name: bubble;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-delay: -3s;
-    opacity: 0.5;
+    padding: 2% 9%;
+    color: #8d4e31;
+    font-weight: 600;
+    font-size: 1vw;
+    background-color: #dcc79e;
+    border: none;
+    border-radius: 1vw;
+    transition: all 0.2s;
 }
-.bubble3{
+.btnn:hover{
+    background-color: #ccac95;
+    color: white;
+}
+.pic-input{
+    top: 46%;
+    right: 17%;
     position: absolute;
-    background-image:url(/img/boong.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 50%;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    bottom: 0;
-    left: 10%;
-    animation-name: bubble;
-    animation-duration: 18s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-delay: -2s;
+    width: 12%;
+    height: 12%;
+    background-image: url(../img/unknown-removebg-preview.png);
 }
-
-.bubble4{
+section span{
+    color: rgba(255, 255, 255, 0.672);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    background-image:url(/img/boong.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 50%;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    bottom: 0;
-    left: 25%;
-    animation-name: bubble;
-    animation-duration: 22s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-delay: -4s;
+    bottom: -3%;
+    background: transparent;
+    border-radius: 50%; 
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: bub 10s linear;
+    overflow: hidden;
 }
-div.boong.png, div.bubble2, div.bubble3, div.bubble4{
-    height: 6%;
-    width: 7%;
-    /* border: 1px solid #4CAF50; */
-}
-
-@keyframes bubble {
-    0% {
+@keyframes bub{
+    0%{
+        transform: translateY(0);
+        opacity: 1
+    }
+    100%{
+        transform: translateY(-1500%);
         opacity: 0;
     }
-    10% {
-        opacity: 0.5;
-    }
-    95% {
-        opacity: 0.5;
-    }
-    100% {
-        transform: translatey(-165vw);
-        opacity: 0;
-    }
-}
-#hotDogOutput{
-    position: absolute;
-    bottom: 7%;
-    left: 48%;
-    width: 150px;
-    height: 25px;
-}
-#saveButton{
-    position: absolute;
-    bottom: 4%;
-    left: 45%;
-    width:100px;
-    height: 25px;
-}
-#loadButton{
-    position: absolute;
-    bottom: 4%;
-    left: 52.5%;
-    width:100px;
-    height: 25px;
-}
-#latestHotDogStatus{
-    position: absolute;
-    bottom: 5.5%;
-    left: 48%;
 }
