@@ -900,3 +900,12 @@ section span{
     background-color: #ccac95;
     color: white;
 }
+.gpbtn{
+    font-size: 1.3vw;
+    bottom: -95%;
+    left: 39.5%;
+    position: absolute;
+    color: white;
+    transition: all 0.2s;
+    text-decoration: none;
+}
