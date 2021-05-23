@@ -126,14 +126,14 @@ document.addEventListener("keyup", (event) => {
 
   //console.log(event.key);
 
-  if (event.key == "a" && check_x == 0 && check_y <= 600 && check_y > 500 && check != 0) {
+  if (event.key == "q" && check_x == 0 && check_y <= 600 && check_y > 500 && check != 0) {
     //Condition Gameplay(main)
     console.log("hit1");
     point++;
     check = 0;
     document.getElementById("score").innerHTML = point;
   } else if (
-    event.key === "s" &&
+    event.key === "w" &&
     check_x == 100 &&
     check_y <= 600 &&
     check_y > 500 &&
@@ -144,7 +144,7 @@ document.addEventListener("keyup", (event) => {
     check = 0;
     document.getElementById("score").innerHTML = point;
   } else if (
-    event.key === "j" &&
+    event.key === "e" &&
     check_x == 200 &&
     check_y <= 600 &&
     check_y > 500 &&
@@ -155,7 +155,7 @@ document.addEventListener("keyup", (event) => {
     check = 0;
     document.getElementById("score").innerHTML = point;
   } else if (
-    event.key === "k" &&
+    event.key === "r" &&
     check_x == 300 &&
     check_y <= 600 &&
     check_y > 500 &&
@@ -166,7 +166,7 @@ document.addEventListener("keyup", (event) => {
     check = 0;
     document.getElementById("score").innerHTML = point;
   } else if (
-    event.key === "l" &&
+    event.key === "t" &&
     check_x == 400 &&
     check_y <= 600 &&
     check_y > 500 &&
