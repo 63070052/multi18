@@ -68,6 +68,7 @@ section{
     background: lightblue;
     width: 100%;
     height: 100%;
+    animation: loaderbg 5s;
 }
 .loader{
     border: 0 solid transparent;
@@ -103,6 +104,23 @@ section{
     }
     100%{
         transform: scale(1);
+        opacity: 0;
+    }
+}
+@keyframes loaderbg {
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.75;
+    }
+    75%{
+        opacity: 0.25;
+    }
+    100%{
         opacity: 0;
     }
 }
