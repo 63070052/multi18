@@ -1,3 +1,11 @@
+// time set loader page
+setTimeout(function(){
+  $('.loader_bg').fadeToggle()
+}, 1000);
+
+
+
+
 var w = window.innerWidth;
 var h = window.innerHeight;
 var check_element = 0;
@@ -61,7 +69,6 @@ function showImg(event){
     if(event < 1){num = img.length}
     console.log("there are "+ img.length + " pic in this slider"); //check how many pic
     for(i = 0; i < img.length; i++){
-        // img[i].style.right = '0';
         img[i].style.opacity = '0';
         text[i].style.opacity = '0';
     }
@@ -112,7 +119,7 @@ function droptest() {
         var drop = document.querySelector(".drop-slide");
         var windowheight = window.innerHeight;
         var top = drop.getBoundingClientRect().top;
-        if (top < windowheight - 300 && top > -450) {   
+        if (top < windowheight - 400 && top > -500) {   
             drop.style.opacity = 1;
             drop.style.position = "fixed";
             check = 1;
@@ -136,3 +143,9 @@ function below() {
         document.querySelector('.background-block').style.display = "none";
     }
 }
+
+
+
+
+
+
