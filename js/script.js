@@ -1,7 +1,7 @@
 // time set loader page
 setTimeout(function(){
   $('.loader_bg').fadeToggle()
-}, 6000);
+}, 5000);
 
 
 
