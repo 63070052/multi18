@@ -112,7 +112,7 @@ function droptest() {
         var drop = document.querySelector(".drop-slide");
         var windowheight = window.innerHeight;
         var top = drop.getBoundingClientRect().top;
-        if (top < windowheight - 400 && top > -500) {   
+        if (top < windowheight - 300 && top > -450) {   
             drop.style.opacity = 1;
             drop.style.position = "fixed";
             check = 1;
