@@ -17,6 +17,14 @@
     font-family: th sarabun psk;
     src: url(../fonts/Sarabun-Light.ttf);
 }
+@font-face{
+    font-family: prompt;
+    src: url(../fonts/Prompt-Light.ttf);
+}
+@font-face{
+    font-family: prompt-cause;
+    src: url(../fonts/Prompt-Regular.ttf);
+}
 *{
     margin: 0;
     padding: 0;
