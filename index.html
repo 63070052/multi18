@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <link rel="icon" href="/img/น้องวาฬ.png" type="image/png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plastic Ocean</title>
+    <title>Narak tee sud nai lok</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
-    <link rel="icon" href="../img/น้องวาฬ.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/2cb51aab6c.js" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 </head>
 <body style="background-color: #ebdece;">
     <!-- Section 1-->
-    <div id="loading">
-        <div class="loading-pulse">
-        </div>
-        <div class="loading-pulse" style="top: 50%; right: 40%;">
-        </div>
-
-        <div class="loading-pulse" style="top: 47%; right: 40%; transform: scale(0.7);">
-        </div>
+    <div class="loader_bg">
+        <div class="loader"></div>
     </div>
-
     <div id="btnTop" class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;display: none;">
         <a href="#topSection" class="btn-floating btn-large red">
           <i class="fa fa-arrow-up"></i>
@@ -51,7 +47,7 @@
             <div class="sea-sye bg"></div>
             <p class="cause">เกิดปัญหา</p>  
 
-            <p class="trash-sea" style="top: 74%; left: 33.5%;">ขยะในทะเล</p>
+            <p class="trash-sea" style="top: 74%; left: 30%;">ขยะในทะเล</p>
             <p class="animal-water" style="top:77.7%; left: 49.5%;">สัตว์น้ำได้รับบาดเจ็บ</p>
 
             <div id="point" style="top: 74.5%; left: 45%; height: 4.2%;">
@@ -184,7 +180,7 @@
             </div>
         </div>
 
-        <p class="cause" style="top: 41%; left: 37%;">เกิดปัญหา</p>
+        <p class="cause" style="top: 40%; left: 37%;">เกิดปัญหา</p>
 
         <div id="point" style="top: 47%; left: 49%; height: 15%;">
             <div class="line" style="top: 5%; height: 85%;"></div>
@@ -248,14 +244,18 @@
                 <input type="text" id="input-comment"  autocomplete="off"> 
                 <div class="pic-input bg"></div>
                 <button class="btnn" onclick="popupp()">Save</button>
+                <button class="gpbtn"><a href="https://act.greenpeace.org/page/34356/petition/1?ea.tracking.id=Planet3&_ga=2.174973163.892566237.1621759551-1044609245.1619590202">ร่วมลงชื่อ</a></button>
             </div>
         </div>
         <div class="check-below" style="position: absolute; bottom: 0;"></div>
+        
     </section>
     
     <a href="#" class="to-top">
         <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </a>
+
+
     <!-- Ph -->
     <script>
         document.querySelector("#input-comment").addEventListener("keyup", function(event){
@@ -265,5 +265,8 @@
         }
          })
     </script>
+</body>
+    
+    <!-- Ph -->
 </body>
 </html>
