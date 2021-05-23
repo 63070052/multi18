@@ -8,34 +8,34 @@ body{
   padding: 0;
 }
 #background{
-  height: 750px;
-  width: 1535px;
+  height: 100%;
+  width: 100%;
   position: absolute;
   z-index: -500;
 }
 #game
 {
-  width: 400px;
+  width: 500px;
   height: 600px;
   margin: auto;
   background-color: #0002;
-  
+  display:none;
 }
 
 #block
 {
+  top:-100px;
   width: 100px;
   height: 100px;
-  background-color: black;
+  background-position: center;
   position: relative;
-  animation: slide 1s infinite;
+  animation: none;
 }
-
 
 #white
 {
-  width: 400px;
-  height: 160px;
+  width: 500px;
+  height: 200px;
   background-color: #87CEEB;
   position: absolute;
   top: 600px;
@@ -49,7 +49,6 @@ body{
 {
   width: 100px;
   height: 100px;
-  background-color: #0009;
   opacity: 25%;
   position: relative;
   z-index:1;
@@ -60,37 +59,66 @@ body{
   width: 100px;
   height: 100px;
   background-color: green;
+  background: url(img/bin1.png);
+  background-size: 95px 95px;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   top: 300px;
   left: 0px;
-  z-index: -1;
+  z-index: 1;
 }
 #button2{
   width: 100px;
   height: 100px;
   background-color: red;
+  background: url(img/bin2.png);
+  background-size: 95px 95px;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   top: 200px;
   left: 100px;
-  z-index: -1;
+  z-index: 1;
 }
 #button3{
   width: 100px;
   height: 100px;
   background-color: blue;
+  background: url(img/bin3.png);
+  background-size: 95px 95px;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   top: 100px;
   left: 200px;
-  z-index: -1;
+  z-index: 1;
 }
 #button4{
   width: 100px;
   height: 100px;
-  background-color: orange;
+  background-color: red;
+  background: url(img/bin5.png);
+  background-size: 95px 95px;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   top: 0px;
   left: 300px;
-  z-index: -1;
+  z-index: 1;
+}
+#button5{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  background: url(img/bin4.png);
+  background-size: 95px 95px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: -100px;
+  left: 400px;
+  z-index: 1;
 }
 #score{
   font-size: 25px;
@@ -107,66 +135,195 @@ body{
   z-index: 1001;
 
 }
+#minutes{
+  font-size: 25px;
+  color:black;
+  position:absolute;
+  z-index: 1001;
+
+}
+#seconds{
+  font-size: 25px;
+  color:black;
+  position:absolute;
+  margin-left:30px;
+  z-index: 1001;
+
+}
+#minutes2{
+  font-size: 25px;
+  color:black;
+  position:absolute;
+  z-index: 1001;
+
+}
+#seconds2{
+  font-size: 25px;
+  color:black;
+  position:absolute;
+  margin-left:30px;
+  z-index: 1001;
+
+}
 svg{
   background:#87CEEB;
   position:absolute;
   z-index:-500;
 }
 
-button .linkbtn{
-    position: absolute;
-    border: 2px solid black;
-    width: 100px;
-    height: 25px;
-    background-color: lightblue;
-    left: 45%;
-    border-radius: 10%;
-    cursor: pointer;
+#board {
+  width: 520px;
+  height: 220px;
+  border-radius: 50px;
+  display:none;
+  top:33%;
+  left:33%;
+  position:absolute;
+  background-color: #D3D3D3;
+  border: 10px solid #BEBEBE;
+}
+h1{
+  text-align: center;
+  color:#B22222;
+}
+#text1{
+  margin: 25px;
+  margin-left:50px;
+  display: inline-block;
+}
+#text2{
+  margin-left: 50px;
+  display: inline-block;
+}
+#score2{
+  display: inline-block;
+}
+#time2{
+  display: inline-block;
+}
+#link {
+  text-decoration:none;
+  font-size:20px;
+  border: 2px solid #1a3131;
+  padding:10px 20px 10px 20px;
+  border-radius:15px;
+  color:#1a3131;
+  margin:70px;
+  background: #bbc7cc;
+  font-family: "Lucida Console";
+  position: absolute;
+  top:100px;
+  left:0px;
+}
+#link:hover {
+  color:#FFFFFF;
+  background-color:#1a3131;
+}
+#link:active{
+  transform: scale(0.90);
+}
+iframe{
+  position: absolute;
+  opacity: 0;
+}
+#menu{
+  position: absolute;
+}
+#logo{
+  width: 50vw;
+  margin-left:25vw;
+  position: relative;
+}
+#play, #how, #web{
+  text-decoration:none;
+  
+  height:80px;
+  width:200px;
+  border: 2px solid #1a3131;
+  padding:10px 20px 10px 20px;
+  border-radius:15px;
+  color:#1a3131;
+  background: #bbc7cc;
+  font-family: "Lucida Console";
+  position: relative;
+  display: block;
+  left: 45vw;
+}
+#play:hover, #how:hover, #web:hover{
+  color:#FFFFFF;
+  background-color:#1a3131;
+}
+#play:active, #how:active, #web:active{
+  transform: scale(0.90);
+}
+#play{
+  font-size:20px;
+  top: 5vh;
+}
+#how{
+  font-size:15px;
+  top:10vh;
+}
+#web{
+  font-size:20px;
+  top:15vh;
+}
+#howtoplay{
+  width:800px;
+  height:600px;
+  border-radius: 50px;
+  background-color: #D3D3D3;
+  border: 10px solid #BEBEBE;
+  display:none;
+  margin:auto;
+}
+#back{
+  text-decoration:none;
+  font-size:20px;
+  height:50px;
+  width:100px;
+  border: 2px solid #1a3131;
+  padding:10px 20px 10px 20px;
+  border-radius:15px;
+  color:#1a3131;
+  background: #bbc7cc;
+  font-family: "Lucida Console";
+  position: relative;
+  margin:10px;
+  left:85%;
+}
+#back:hover{
+  color:#FFFFFF;
+  background-color:#1a3131;
+}
+#back:active{
+  transform: scale(0.90);
+}
+#menubut{
+  text-decoration:none;
+  font-size: 20px;
+  border: 2px solid #1a3131;
+  padding:10px 20px 10px 20px;
+  border-radius:15px;
+  color:#1a3131;
+  margin:70px;
+  background: #bbc7cc;
+  font-family: "Lucida Console";
+  position: absolute;
+  top:100px;
+  left:250px;
+}
+#menubut:hover{
+  color:#FFFFFF;
+  background-color:#1a3131;
+}
+#menubut:active{
+  transform: scale(0.90);
 }
 
-/* Pre Loader Start Here na krub*/
-.loader_bg{
-    position: fixed;
-    z-index: 999999;
-    background: lightblue;
-    width: 100%;
-    height: 100%;
+#countdown{
+  position: absolute;
+  left: 48%;
+  font-size: 100px;
+  font-family: "Lucida Console";
 }
-.loader{
-    border: 0 solid transparent;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: calc(50vh - 75px);
-    left: calc(50vw -  75px);
-}
-.loader:before, .loader:after{
-    content: '';
-    border: 1em solid whitesmoke;
-    border-radius: 50%;
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: loader 2s linear infinite;
-    opacity: 0;
-}
-.loader:before{
-    animation-delay: .5s;
-}
-@keyframes loader {
-    0%{
-        transform: scale(0);
-        opacity: 0;
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        transform: scale(1);
-        opacity: 0;
-    }
-}
-/* Sed laew Yeh!!*/
