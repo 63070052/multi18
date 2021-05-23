@@ -864,6 +864,7 @@ div.line-block{
     border: none;
     border-radius: 1vw;
     transition: all 0.2s;
+    cursor: pointer;
 }
 .btnn:hover{
     background-color: #ccac95;
@@ -900,24 +901,6 @@ section span{
         opacity: 0;
     }
 }
-.gpbtn a{
-    bottom: -95%;
-    left: 37%;
-    position: absolute;
-    padding: 2% 9%;
-    color: #8d4e31;
-    font-weight: 600;
-    font-size: 1vw;
-    background-color: #dcc79e;
-    border: none;
-    border-radius: 1vw;
-    transition: all 0.2s;
-    text-decoration: none;
-}
-.gpbtn a:hover{
-    background-color: #ccac95;
-    color: white;
-}
 .gpbtn{
     font-size: 1.3vw;
     bottom: -95%;
@@ -927,4 +910,5 @@ section span{
     transition: all 0.2s;
     text-decoration: none;
     letter-spacing: 1px;
+    cursor: pointer;
 }
