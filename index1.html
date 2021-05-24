@@ -11,6 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Prompt&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
   <audio id="click" src="audio/click.wav"></audio>
   <audio id="321" src="audio/321.mp3"></audio>
   <audio id="theme" src="audio/song.mp3"></audio>
@@ -27,8 +30,8 @@
         <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/a.png"></img> (สำหรับถังขยะสีเขียว)<br></h3>
         <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/s.png"></img> (สำหรับถังขยะสีน้ำเงิน)<br></h3>
         <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/j.png"></img> (สำหรับถังขยะสีเหลือง)<br></h3>
-        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/k.png"></img> (สำหรับถังขยะสีแดง)<br></h3>
-        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/l.png"></img> (สำหรับถังขยะสีส้ม)<br></h3></h2><br><br>
+        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/k.png"></img> (สำหรับถังขยะสีส้ม)<br></h3>
+        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/l.png"></img> (สำหรับถังขยะสีแดง)<br></h3></h2><br><br>
       <h2>&emsp;- เงื่อนไขการเล่น :<br>
         <h3>&emsp;&emsp;&emsp;เมื่อเกมเริ่ม (start) ขยะจะไหลลงมาถึงตำแหน่งถังขยะแต่ละถัง ผู้เล่นจะต้องกดปุ่มให้ตรงกับ<br>
           &emsp;&emsp;&emsp;จังหวะที่ขยะไหลลงมาถึงพอดี ถ้าทำได้คะแนนจะเพิ่มครั้งละ1แต้มแต่ถ้าผู้เล่นไม่สามารถกดได้<br>
@@ -112,7 +115,7 @@
       <div class="liquid"></div>
     </button>
     <button id="web" onclick="website()">
-      <h6>Website</h6>
+      <h6>MAINPAGE</h6>
       <div class="liquid"></div>
     </button>
   </div>
@@ -121,7 +124,7 @@
     <h2 id="text1">Your score : <div id="score2">0</div></h2>
     <h2 id="text2">Your time : <label id="minutes2">00</label> <label id="seconds2">00</label></h2>
     <button id="link" onclick="website()">
-      <h6>Website</h6>
+      <h6>MAINPAGE</h6>
       <div class="liquid"></div>
       </button>
     <button id="menubut" onclick="reload()">

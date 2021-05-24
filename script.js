@@ -21,6 +21,30 @@ var diff = document.getElementById("diff");
 document.getElementById("sea").play();
 document.getElementById("sea").loop = true;
 document.getElementById("sea").volume = 0.5;
+
+function preloadImages(array) {
+  if (!preloadImages.list) {
+      preloadImages.list = [];
+  }
+  var list = preloadImages.list;
+  for (var i = 0; i < array.length; i++) {
+      var img = new Image();
+      img.onload = function() {
+          var index = list.indexOf(this);
+          if (index !== -1) {
+              // remove image from the array once it's loaded
+              // for memory consumption reasons
+              list.splice(index, 1);
+          }
+      }
+      list.push(img);
+      img.src = array[i];
+  }
+}
+
+preloadImages(["img/object1.png", "img/object2.png", "img/object3.png", "img/object4.png", "img/object5.png", 
+"img/object6.png", "img/object7.png", "img/object8.png", "img/object10.png", "img/object11.png", "img/object12.png", "img/object13.png", "img/object14.png"]);
+
 function reload() {
   click();
   location.reload();
@@ -323,12 +347,15 @@ var timer = setInterval(() => {
     //alert("ขยะเน่าแล้วไอเวรร");
   }
   if (point == 15 && check_y > 600) {
+    block.style.animation = "none";
     block.style.animation = "slide 1.65s infinite";
   }
   if (point == 25 && check_y > 600) {
+    block.style.animation = "none";
     block.style.animation = "slide 1.25s infinite";
   }
   if (point == 50 && check_y > 600) {
+    block.style.animation = "none";
     block.style.animation = "slide 0.95s infinite";
   }
   if (check_y >= -100 && check_y <= 470) {
