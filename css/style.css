@@ -424,6 +424,7 @@ p.topic{
     top: -95%;
     width: 100%;
     height: 600vh;
+    transform: scale(1.14);
     background-image: url(../img/micro-pf.png);
     /* border: 2px solid black; */
 }
