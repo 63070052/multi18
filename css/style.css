@@ -912,7 +912,9 @@ section span{
     letter-spacing: 1px;
     cursor: pointer;
 }
-
+.gpbtn:hover{
+    transform: scale(1.1);
+}
 .comment{
     position: absolute;
     bottom: 53%;
