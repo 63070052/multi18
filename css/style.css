@@ -887,6 +887,25 @@ div.line-block{
     background-color: #ccac95;
     color: white;
 }
+.btnm{
+    bottom: 0;
+    position: absolute;
+    padding: 1.4% 5%;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5vw;
+    background-color: #aa8b4e;
+    border: none;
+    border-radius: 1vw;
+    transition: all 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1;
+}
+.btnm:hover{
+    background-color: #ccac95;
+    color: white;
+}
 .pic-input{
     top: 46%;
     right: 17%;
