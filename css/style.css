@@ -912,3 +912,15 @@ section span{
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+.comment{
+    position: absolute;
+    bottom: 53%;
+    padding: 2% 9%;
+    color: lightcyan;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 1.75vw;
+    text-decoration: none;
+    text-shadow: black;
+}
