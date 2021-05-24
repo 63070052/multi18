@@ -63,7 +63,7 @@ function pad(val) {
 }
 function website() {
   click();
-  window.open("https://plasticocean.netlify.app/", "_blank");
+  window.open("https://plasticocean.netlify.app/index.html", "_blank");
 }
 function first() {
   count();
