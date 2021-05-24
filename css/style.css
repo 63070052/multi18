@@ -785,7 +785,7 @@ p.quote::after{
 
 p.lastlaew{
     color: #FAFBEB;
-    font-size: 1.7vw;
+    font-size: 1.4vw;
     letter-spacing: 1px;
     font-weight: 500;
     /* letter-spacing: 0.5px; */
@@ -918,21 +918,25 @@ section span{
         opacity: 0;
     }
 }
-.gpbtn{
-    width: 190%;
-    font-size: 3vw;
-    font-family: prompt;
-    bottom: -95%;
-    left: -40%;
+.gpbtn {
+    top: 78.5%;
+    left: 38.5%;
     position: absolute;
-    color: white;
+    padding: 2% 9%;
+    color: #8d4e31;
+    font-weight: 600;
+    font-size: 1vw;
+    background-color: #dcc79e;
+    border: none;
+    border-radius: 1vw;
     transition: all 0.2s;
+    cursor: pointer;
+    z-index: 10;
     text-decoration: none;
-    letter-spacing: 1px;
 }
-.gpbtn:hover{
+.gpbtn :hover{
     transform: scale(1.01);
-    color: #6acdf1;
+    color: white;
 }
 .comment{
     position: absolute;
