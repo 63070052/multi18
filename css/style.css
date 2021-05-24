@@ -33,7 +33,7 @@
     /* border: 1px solid black; */
 }
 body,html{
-    background-image: url(../img/ลายกระดาษยับทับพื้นหลัง.png);
+    background-image: url(../img/ดาษ.png);
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
