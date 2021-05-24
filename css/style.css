@@ -918,18 +918,20 @@ section span{
     }
 }
 .gpbtn{
-    font-size: 1.3vw;
+    width: 190%;
+    font-size: 3vw;
+    font-family: prompt;
     bottom: -95%;
-    left: 39.5%;
+    left: -40%;
     position: absolute;
     color: white;
     transition: all 0.2s;
     text-decoration: none;
     letter-spacing: 1px;
-    cursor: pointer;
 }
 .gpbtn:hover{
-    transform: scale(1.1);
+    transform: scale(1.01);
+    color: #6acdf1;
 }
 .comment{
     position: absolute;
