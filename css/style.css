@@ -898,6 +898,7 @@ div.line-block{
     transition: all 0.2s;
     text-decoration: none;
     cursor: pointer;
+    letter-spacing: 1px;
     z-index: 1;
 }
 .btnm:hover{
