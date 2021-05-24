@@ -561,6 +561,10 @@ div.image-carousel{
     width: 35%;
     height: 18%;
     background-image: url(../img/น้องวาฬ.png);
+    transition-duration: 0.3s;
+}
+.whale:hover{
+    transform: scale(1.05);
 }
 p.head-ocean{
     color: #495679;
