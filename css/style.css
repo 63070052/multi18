@@ -894,7 +894,7 @@ div.line-block{
     color: white;
     font-weight: 600;
     font-size: 1.5vw;
-    background-color: #aa8b4e;
+    background-color: #c77e42;
     border: none;
     border-radius: 1vw;
     transition: all 0.2s;
@@ -903,8 +903,9 @@ div.line-block{
     z-index: 1;
 }
 .btnm:hover{
-    background-color: #ccac95;
+    background-color: #cf966d;
     color: white;
+    box-shadow:0px 0px 10px rgb(110, 110, 83);
 }
 .pic-input{
     top: 46%;
