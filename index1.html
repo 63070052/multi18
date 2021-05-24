@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trash Me If You Can</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/icon.png" type="icon">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="shortcut icon" href="img/logo.png" type="icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Prompt&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,16 +19,16 @@
   <audio id="alarm" src="audio/alarm.wav"></audio>
   <audio id="hit" src="audio/hit.wav"></audio>
   <audio id="miss" src="audio/miss.wav"></audio>
-  <iframe width="0" height="0" src="https://www.youtube.com/embed/Nep1qytq9JM?&autoplay=1&mute=0.5"></iframe>
+  <audio id="sea" src="audio/sea.wav"></audio>
   <img id="background" src="img/ระดับ1.jpg" alt="">
   <div id="howtoplay">
     <h1>คำแนะนำการเล่น</h1><br>
       <h2>&emsp;- ปุ่มคีย์บอร์ดสำหรับเล่น :
-        <h3>&emsp;&emsp;&emsp;a (สำหรับถังขยะสีเขียว)<br></h3>
-        <h3>&emsp;&emsp;&emsp;s (สำหรับถังขยะสีน้ำเงิน)<br></h3>
-        <h3>&emsp;&emsp;&emsp;j (สำหรับถังขยะสีเหลือง)<br></h3>
-        <h3>&emsp;&emsp;&emsp;k (สำหรับถังขยะสีแดง)<br></h3>
-        <h3>&emsp;&emsp;&emsp;l (สำหรับถังขยะสีส้ม)<br></h3></h2><br><br><br>
+        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/a.png"></img> (สำหรับถังขยะสีเขียว)<br></h3>
+        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/s.png"></img> (สำหรับถังขยะสีน้ำเงิน)<br></h3>
+        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/j.png"></img> (สำหรับถังขยะสีเหลือง)<br></h3>
+        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/k.png"></img> (สำหรับถังขยะสีแดง)<br></h3>
+        <h3>&emsp;&emsp;&emsp;<img id="keyy" src="img/l.png"></img> (สำหรับถังขยะสีส้ม)<br></h3></h2><br><br>
       <h2>&emsp;- เงื่อนไขการเล่น :<br>
         <h3>&emsp;&emsp;&emsp;เมื่อเกมเริ่ม (start) ขยะจะไหลลงมาถึงตำแหน่งถังขยะแต่ละถัง ผู้เล่นจะต้องกดปุ่มให้ตรงกับ<br>
           &emsp;&emsp;&emsp;จังหวะที่ขยะไหลลงมาถึงพอดี ถ้าทำได้คะแนนจะเพิ่มครั้งละ1แต้มแต่ถ้าผู้เล่นไม่สามารถกดได้<br>
@@ -36,6 +36,63 @@
         &emsp;&emsp;&emsp;ลบครั้งละ 1&emsp;"เกมจะจบก็ต่อเมื่อพลังชีวิตของผู้เล่นลดลงจนเหลือ 0"
         </h3></h2><br><br>
   <button id="back" onclick="backtowebsite()">
+    <h6>Back</h6>
+    <div class="liquid"></div>
+    </button>
+  </div>
+<div id="knowledge">
+    <img class="img img1">
+    <h2 class="textknow">
+      Polyethylene Terephthalate : PETE
+      <br><br>
+      คุณสมบัติ : พลาสติกโพลีเมอร์ใส มีความทนทานต่อแรงกระแทก และมีคุณสมบัติในการป้องกันการแพร่ผ่านของก๊าซได้ดี เช่น ขวดน้ำดื่มและขวดน้ำมันพืช
+    </h2>
+    <br><br>
+    <img class="img img2">
+    <h2 class="textknow">
+      High-density Polyethylene : HDPE
+      <br><br>
+      คุณสมบัติ : พลาสติกชนิดนี้มีความหนาแน่นสูง แต่โปร่งแสงน้อยกว่าโพลีเอทิลีน ป้องกันการแพร่ผ่านของความชื้นได้ดี นำมาใช้ในการผลิตขวดนม ขวดเครื่องสำอาง ถุงพลาสติก ถังขยะ ถังบรรจุสารเคมี เช่น ถังน้ำมันรถ
+    </h2>
+    <br><br>
+    <img class="img img3">
+    <h2 class="textknow">
+      Polyvinyl Chloride : PVC
+      <br><br>
+      คุณสมบัติ : เป็นพลาสติกใสที่มีความแข็งแรงมาก ไอน้ำและอากาศซึมผ่านได้พอสมควร แต่ป้องกันไขมันได้ดี เช่น ท่อน้ำประปา หนังเทียม ฉนวนหุ้มสายไฟ ขวดเครื่องดื่มแอลกอฮอล์ และอุปกรณ์การแพทย์
+    </h2>
+    <br><br>
+    <img class="img img4">
+    <h2 class="textknow">
+      Low-density Polyethylene : LDPE
+      <br><br>
+      คุณสมบัติ : เป็นพลาสติกโปร่งแสง ที่มีปริมาตรสูง แต่ความหนาแน่นต่ำ เช่น ถุงบรรจุอาหารแช่แข็ง แผ่นฟิล์ม ถุงใส่ของ และสายหุ้มทองแดง
+    </h2>
+    <br><br>
+    <img class="img img5">
+    <h2 class="textknow">
+      Polypropylene : PP
+      <br><br>
+      คุณสมบัติ : เป็นพลาสติกที่มีน้ำหนักเบาที่สุด แต่มีความแข็งแรง ทนทานต่อแรงกระแทก และความร้อนสูง เช่น ฉนวนไฟฟ้า บานพับ ฝาขวด ภาชนะบรรจุอาหาร ถุงร้อน และหลอดดูด
+    </h2>
+    <br><br>
+    <img class="img img6">
+    <h2 class="textknow">
+      Polystyrene : PS
+      <br><br>
+      คุณสมบัติ : เป็นพลาสติกที่มีความโปร่งใส เปราะบาง แต่ทนต่อกรดและด่าง ผลิตเป็นรูปต่าง ๆ ได้ง่าย ไอน้ำและอากาศซึมผ่านได้พอสมควร เช่น อุปกรณ์ไฟฟ้าและอิเล็กทรอนิกส์ ภาชนะ เช่น ถ้วย จาน และกล่องโฟม  
+    </h2>
+    <br><br>
+    <img class="img img7">
+    <h2 class="textknow other">
+      Other
+      <br><br>
+      คุณสมบัติ : พลาสติกชนิดอื่น ๆ ที่ไม่ใช่ 6 ชนิดแรก เช่น โพลีคาร์บอเนต (Polycarbonate : PC) เป็นพลาสติกโปร่งใส มีความแข็งแรง ทนต่อความร้อน กรด และแรงกระแทกได้ดี
+      <br><br>
+      เช่น นำมาใช้ในการผลิตปากกา ขวดนมเด็ก หมวกนิรภัย ไฟจราจร ป้ายโฆษณา 
+    </h2>
+
+    <button id="back1" onclick="backtowebsite()">
     <h6>Back</h6>
     <div class="liquid"></div>
     </button>
@@ -50,7 +107,7 @@
       <h6>How To Play</h6>
       <div class="liquid"></div>
     </button>
-    <button id="know" onclick="howtoplay()">
+    <button id="know" onclick="knowledge()">
       <h6>Knowledge</h6>
       <div class="liquid"></div>
     </button>
@@ -74,6 +131,9 @@
   </div>
   <div id="game">
     <img id="block" src="img/object7.png"></img>
+    <div id="hitt"></div>
+    <div id="plus"></div>
+    <div id="diff"></div>
     <div id="countdown">3</div>
     <div id="button"></div>
     <div id="button1"></div>

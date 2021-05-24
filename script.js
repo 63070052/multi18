@@ -15,6 +15,12 @@ var hit2 = document.getElementById("button2");
 var hit3 = document.getElementById("button3");
 var hit4 = document.getElementById("button4");
 var hit5 = document.getElementById("button5");
+var hit = document.getElementById("hitt");
+var plus = document.getElementById("plus");
+var diff = document.getElementById("diff");
+document.getElementById("sea").play();
+document.getElementById("sea").loop = true;
+document.getElementById("sea").volume = 0.5;
 function reload() {
   click();
   location.reload();
@@ -31,11 +37,17 @@ function backtowebsite() {
   document.getElementById("howtoplay").style.display = "none";
   document.getElementById("board").style.display = "none";
   document.getElementById("game").style.display = "none";
+  document.getElementById("knowledge").style.display = "none";
 }
 function howtoplay() {
   click();
   document.getElementById("menu").style.display = "none";
   document.getElementById("howtoplay").style.display = "block";
+}
+function knowledge() {
+  click();
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("knowledge").style.display = "block";
 }
 function setTime() {
   if (sec_count > 1){
@@ -63,12 +75,13 @@ function pad(val) {
 }
 function website() {
   click();
-  window.open("https://plasticocean.netlify.app/index.html", "_blank");
+  window.open("https://gracious-minsky-279da1.netlify.app/", "_blank");
 }
 function first() {
   count();
   click();
   document.getElementById("theme").play();
+  document.getElementById("theme").loop = true;
   document.getElementById("theme").volume = 0.25;
   document.getElementById("menu").style.display = "none";
   document.getElementById("game").style.display = "block";
@@ -79,7 +92,7 @@ function first() {
 }
 block.addEventListener("animationiteration", () => {
   var random_img = Math.floor(Math.random() * 13);
-  console.log(random_img);
+  console.log("random" + random_img);
   if (random_img == 0) {
     img2.src = "img/object1.png";
     block.style.left = "200px";
@@ -145,12 +158,16 @@ document.addEventListener("keyup", (event) => {
   );
 
   //console.log(event.key);
-
   if (event.key == "a" && check_x == 0 && check_y <= 600 && check_y > 500 && check == 1) {
     //Condition Gameplay(main)
     console.log("hit1");
     point++;
     check = 0;
+    document.getElementById("hitt").innerHTML = "PERFECT";
+    document.getElementById("plus").innerHTML = "+1";
+    hit.style.color = "yellow";
+    hit.style.left = "44%";
+    plus.style.animation = "plus 1.25s linear";
     hit1.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
@@ -164,6 +181,11 @@ document.addEventListener("keyup", (event) => {
     console.log("hit2");
     point++;
     check = 0;
+    document.getElementById("hitt").innerHTML = "PERFECT";
+    document.getElementById("plus").innerHTML = "+1";
+    hit.style.color = "yellow";
+    hit.style.left = "44%";
+    plus.style.animation = "plus 1.25s linear";
     hit2.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
@@ -177,6 +199,12 @@ document.addEventListener("keyup", (event) => {
     console.log("hit3");
     point++;
     check = 0;
+    document.getElementById("hitt").innerHTML = "PERFECT";
+    document.getElementById("plus").innerHTML = "+1";
+    hit.style.color = "yellow";
+    hit.style.left = "44%";
+    plus.style.animation = "plus 1.25s linear";
+    document.getElementById("hit").play();
     hit3.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
@@ -190,6 +218,11 @@ document.addEventListener("keyup", (event) => {
     console.log("hit4");
     point++;
     check = 0;
+    document.getElementById("hitt").innerHTML = "PERFECT";
+    document.getElementById("plus").innerHTML = "+1";
+    hit.style.color = "yellow";
+    hit.style.left = "44%";
+    plus.style.animation = "plus 1.25s linear";
     hit4.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
@@ -203,6 +236,11 @@ document.addEventListener("keyup", (event) => {
     console.log("hit5");
     point++;
     check = 0;
+    document.getElementById("hitt").innerHTML = "PERFECT";
+    document.getElementById("plus").innerHTML = "+1";
+    hit.style.color = "yellow";
+    hit.style.left = "44%";
+    plus.style.animation = "plus 1.25s linear";
     hit5.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
@@ -210,6 +248,11 @@ document.addEventListener("keyup", (event) => {
     console.log("up");
     live--;
     check = 2;
+    hit.style.left = "43%";
+    hit.style.color = "red";
+    document.getElementById("hitt").innerHTML = "TOO FAST";
+    diff.style.animation = "plus 1.25s linear";
+    document.getElementById("diff").innerHTML = "-1";
     setTimeout(function miss() {
       document.getElementById("miss").play();
     }, 800);
@@ -225,6 +268,11 @@ var timer = setInterval(() => {
     window.getComputedStyle(block).getPropertyValue("top")
   );
   if (check_y < 0) {
+    diff.style.animation = "";
+    document.getElementById("diff").innerHTML = "";
+    plus.style.animation = "";
+    document.getElementById("plus").innerHTML = "";
+    document.getElementById("hitt").innerHTML = "";
     hit1.style.animation = "";
     hit2.style.animation = "";
     hit3.style.animation = "";
@@ -235,6 +283,11 @@ var timer = setInterval(() => {
     console.log("miss");
     document.getElementById("miss").play();
     check = 3;
+    diff.style.animation = "plus 1.25s linear";
+    document.getElementById("diff").innerHTML = "-1";
+    hit.style.left = "47%";
+    hit.style.color = "red";
+    document.getElementById("hitt").innerHTML = "MISS";
     live--;
     document.getElementById("score").innerHTML = point;
     document.getElementById("live").innerHTML = "live : " + live;
@@ -273,10 +326,16 @@ var timer = setInterval(() => {
     block.style.animation = "slide 1.65s infinite";
   }
   if (point == 25 && check_y > 600) {
-    block.style.animation = "slide 1.35s infinite";
+    block.style.animation = "slide 1.25s infinite";
   }
   if (point == 50 && check_y > 600) {
-    block.style.animation = "slide 1.0s infinite";
+    block.style.animation = "slide 0.95s infinite";
+  }
+  if (check_y >= -100 && check_y <= 470) {
+    block.style.opacity = "1";
+  }
+  if (check_y > 470) {
+    block.style.opacity = "0";
   }
 }, 50);
 
