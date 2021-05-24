@@ -877,7 +877,7 @@ div.line-block{
     font-size: 1vw;
     background-color: #dcc79e;
     border: none;
-    border-radius: 1vw;
+    border-radius: 3vw;
     transition: all 0.2s;
     cursor: pointer;
 }
@@ -894,7 +894,7 @@ div.line-block{
     font-size: 1.5vw;
     background-color: #c77e42;
     border: none;
-    border-radius: 1vw;
+    border-radius: 2vw;
     transition: all 0.2s;
     text-decoration: none;
     cursor: pointer;
