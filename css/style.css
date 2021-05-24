@@ -328,11 +328,6 @@ p.animal-water {
     font-size: 2vw;
     font-weight: 600;
     position: absolute; 
-    transition-duration: 0.3s;
-}
-p.trash-sea,
-p.animal-water:hover{
-    transform: scale(1.05);
 }
 #point{
     width: 3%;
