@@ -655,19 +655,31 @@ p.quote::after{
     width: 25%;
     height: 13%;
     background-image: url(../img/ban\ chemi.png);
-     z-index: 1;
+    transition-duration: 0.3s;
+    z-index: 1;
+}
+.ban-chemic:hover{
+    transform: scale(1.05);
 }
 .circle-economy{
     width: 25%;
     height: 13%;
     background-image: url(../img/cir\ econ.png);
-     z-index: 1;
+    transition-duration: 0.3s;
+    z-index: 1;
+}
+.circle-economy:hover{
+    transform: scale(1.05);
 }
 .three-people{
     width: 25%;
     height: 13%;
     background-image: url(../img/three.png);
+    transition-duration: 0.3s;
     z-index: 1;
+}
+.three-people:hover{
+    transform: scale(1.05);
 }
 .solution-topic{
     color: #FAFBEB;
