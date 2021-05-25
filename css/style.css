@@ -282,8 +282,8 @@ p.bin{
     opacity: 0;
     background-image: url(../img/แก้วน้าม.png);
     transition: all 1s;
-    animation: down-drop 5s ease-in;
-    animation-delay: 4s;
+    animation: down-drop 5s ease-in infinite;
+    animation-delay: 5s;
     z-index: 6;
     
 }
@@ -292,10 +292,10 @@ p.bin{
 }
 @keyframes down-drop {
     0%{
-        transform: translateY(0);
+        top: 49%;
     }
     100%{
-        transform: translateY(1000%);
+        top: 200%;
     }
 }
 .coconut-tree{
@@ -327,7 +327,7 @@ p.animal-water,
 p.habitat,
 p.chemicalhuman{
     color: #8b542c;
-    font-size: 2vw;
+    font-size: 1.9vw;
     font-weight: 600;
     position: absolute; 
 }
@@ -803,11 +803,12 @@ p.luknam1{
 }
 div.line-block{
     bottom: 6.5%;
-    left: 40.5%;
+    left: 40%;
     width: 17.5vw;
     height: 0.3vw; 
     background-color: white; 
     position: absolute;
+    border-radius: 10%;
 }
 .background-block{
     top: 0;
@@ -870,6 +871,7 @@ div.line-block{
 #input-comment:focus{
     border: 2px solid #914725 ;
 }
+/* Save Ai sus */
 .btnn{
     bottom: 0;
     position: absolute;
@@ -886,14 +888,16 @@ div.line-block{
 .btnn:hover{
     background-color: #ccac95;
     color: white;
+    box-shadow:0px 0px 10px rgb(110, 110, 83);
 }
+/* Sign */
 .btnm{
     bottom: 0;
     position: absolute;
-    padding: 1.4% 5%;
+    padding: 1.1% 2.8%;
     color: white;
     font-weight: 600;
-    font-size: 1.5vw;
+    font-size: 1.1vw;
     background-color: #c77e42;
     border: none;
     border-radius: 2vw;
@@ -901,12 +905,13 @@ div.line-block{
     text-decoration: none;
     cursor: pointer;
     letter-spacing: 1px;
-    z-index: 1;
+    z-index: 10;
 }
 .btnm:hover{
     background-color: #cf966d;
     color: white;
-    box-shadow:0px 0px 10px rgb(110, 110, 83);
+    
+    box-shadow:0px 0px 10px rgb(106, 106, 103);
 }
 .pic-input{
     top: 46%;
@@ -941,7 +946,7 @@ section span{
 }
 .gpbtn {
     width: 190%;
-    font-size: 3vw;
+    font-size: 2.3vw;
     font-family: prompt-cause;
     position: absolute;
     font-weight: 600;
