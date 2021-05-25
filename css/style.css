@@ -323,7 +323,9 @@ p.cause{
     position: absolute; 
 }
 p.trash-sea,
-p.animal-water {
+p.animal-water,
+p.habitat,
+p.chemicalhuman{
     color: #8b542c;
     font-size: 2vw;
     font-weight: 600;
