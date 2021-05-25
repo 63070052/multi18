@@ -145,7 +145,7 @@ function below() {
 }
 
 function changetxt(){
-    document.getElementById("luvu").innerHTML = "ขอบคุณสําหรับความคิดเห็นของคุณ";
+    document.getElementById("luvu").innerHTML = " ขอบคุณสําหรับคําตอบ";
 }
 
 
