@@ -144,7 +144,9 @@ function below() {
     }
 }
 
-
+function changetxt(){
+    document.getElementById("luvu").innerHTML = "ขอบคุณสําหรับความคิดเห็นของคุณ";
+}
 
 
 
