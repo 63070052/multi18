@@ -347,7 +347,7 @@ p.chemicalhuman{
     z-index: 4;
 }
 .line{  
-    position: relative;
+    position: absolute;
     border: 5px solid #577667;
 }
 .nong{
