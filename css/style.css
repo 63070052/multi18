@@ -906,7 +906,7 @@ div.line-block{
     text-decoration: none;
     cursor: pointer;
     letter-spacing: 1px;
-    z-index: 10;
+    z-index: 100;
 }
 .btnm:hover{
     background-color: #cf966d;
