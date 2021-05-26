@@ -172,7 +172,7 @@ svg{
 
 #board {
   width: 520px;
-  height: 220px;
+  height: 250px;
   border-radius: 50px;
   display:none;
   top: 50%;
@@ -325,18 +325,33 @@ iframe{
   font-size:20px;
   top:14vh;
 }
-#link,#menubut{
+#link,#menubut,#playagain{
   text-decoration:none;
   font-size: 20px;
   padding:10px 20px 10px 20px;
   border-radius:15px;
   margin:70px;
   position: absolute;
-  top:80px;
+  top:120px;
 }
 #link{
   left:-20px;
   width: 200px;
+}
+#playagain{
+  top:60px;
+  left:80px;
+  width: 240px;
+}
+#menubut1{
+  width: 120px;
+  font-size: 25px;
+  color:black;
+  position:relative;
+  padding:10px 20px 10px 20px;
+  border-radius:15px;
+  top: -75%;
+  left: 115%;
 }
 #menubut{
   left:260px;
@@ -365,7 +380,7 @@ button .liquid{
   position:absolute;
   top:-80px;
   left:0;
-  width:220px;
+  width:240px;
   height:200px;
   background-color:#8ad4ff;
   box-shadow:inset 0 0 50px rgba(0,0,0,0.5);
@@ -431,33 +446,9 @@ button .liquid::after{
     font-family: 'Poppins', sans-serif;
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
-#plus{
-    position: absolute;
-    top:24.5%;
-    left:31%;
-    color:green;
-    font-size: 30px;
-    font-family: 'Poppins', sans-serif;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-}
-#diff{
-  position: absolute;
-  top:14.5%;
-  left:33.5%;
-  color:red;
-  font-size: 30px;
-  font-family: 'Poppins', sans-serif;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-}
-@keyframes plus {
-  0% {transform: translateY(0%);
-    opacity:1;}
-  100% {transform: translateY(10%);
-    opacity:0;}
-}
 #knowledge{
   width:800px;
-  height:600px;
+  height:60vh;
   margin:auto;
   font-size: 10px;
   padding: 60px;
@@ -476,6 +467,7 @@ button .liquid::after{
   width: 150px;
   height: 150px;
   border: none;
+  top:0px;
   position: relative;
   background-image: url(/img/object7.png);
   background-size: 150px 150px;
@@ -560,4 +552,85 @@ button .liquid::after{
   position: relative;
   top:40px;
   left:90%;
+}
+.imgbin1{
+  background: url(/img/bin1.png);
+  top: 20px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  background-position: center;
+}
+.imgbin2{
+  background: url(/img/bin2.png);
+  top: 20px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  background-position: center;
+}
+.imgbin3{
+  background: url(/img/bin2.png);
+  top: 20px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  background-position: center;
+}
+.imgbin4{
+  background: url(/img/bin3.png);
+  top: 20px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  background-position: center;
+}
+.imgbin5{
+  background: url(/img/bin3.png);
+  top: 20px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  background-position: center;
+}
+.imgbin6{
+  background: url(/img/bin4.png);
+  top: 20px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  background-position: center;
+}
+.imgbin7{
+  background: url(/img/bin5.png);
+  top: 20px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  background-position: center;
+}
+#knowledge::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+	border-radius: 10px;
+	background-color: #CCCCCC;
+}
+
+#knowledge::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#knowledge::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #797979;
 }

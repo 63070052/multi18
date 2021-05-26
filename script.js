@@ -16,8 +16,6 @@ var hit3 = document.getElementById("button3");
 var hit4 = document.getElementById("button4");
 var hit5 = document.getElementById("button5");
 var hit = document.getElementById("hitt");
-var plus = document.getElementById("plus");
-var diff = document.getElementById("diff");
 document.getElementById("sea").play();
 document.getElementById("sea").loop = true;
 document.getElementById("sea").volume = 0.5;
@@ -45,6 +43,18 @@ function preloadImages(array) {
 preloadImages(["img/object1.png", "img/object2.png", "img/object3.png", "img/object4.png", "img/object5.png", 
 "img/object6.png", "img/object7.png", "img/object8.png", "img/object10.png", "img/object11.png", "img/object12.png", "img/object13.png", "img/object14.png"]);
 
+window.onload = function() {
+  var reloading = sessionStorage.getItem("reloading");
+  if (reloading) {
+      sessionStorage.removeItem("reloading");
+      first();
+  }
+}
+
+function again() {
+  sessionStorage.setItem("reloading", "true");
+  document.location.reload();
+}
 function reload() {
   click();
   location.reload();
@@ -111,7 +121,7 @@ function first() {
   document.getElementById("game").style.display = "block";
   setInterval(setTime, 1000);
   setTimeout(function start() {
-    block.style.animation = "slide 2s infinite";
+    block.style.animation = "slide 4s infinite";
   }, 3000);
 }
 block.addEventListener("animationiteration", () => {
@@ -181,22 +191,20 @@ document.addEventListener("keyup", (event) => {
     window.getComputedStyle(block).getPropertyValue("top")
   );
 
-  //console.log(event.key);
-  if (event.key == "a" && check_x == 0 && check_y <= 600 && check_y > 500 && check == 1) {
+  //console.log(event.which);
+  if (event.which == 65 && check_x == 0 && check_y <= 600 && check_y > 500 && check == 1) {
     //Condition Gameplay(main)
     console.log("hit1");
     point++;
     check = 0;
     document.getElementById("hitt").innerHTML = "PERFECT";
-    document.getElementById("plus").innerHTML = "+1";
     hit.style.color = "yellow";
     hit.style.left = "44%";
-    plus.style.animation = "plus 1.25s linear";
     hit1.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
   } else if (
-    event.key === "s" &&
+    event.which === 83 &&
     check_x == 100 &&
     check_y <= 600 &&
     check_y > 500 &&
@@ -206,15 +214,13 @@ document.addEventListener("keyup", (event) => {
     point++;
     check = 0;
     document.getElementById("hitt").innerHTML = "PERFECT";
-    document.getElementById("plus").innerHTML = "+1";
     hit.style.color = "yellow";
     hit.style.left = "44%";
-    plus.style.animation = "plus 1.25s linear";
     hit2.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
   } else if (
-    event.key === "j" &&
+    event.which === 74 &&
     check_x == 200 &&
     check_y <= 600 &&
     check_y > 500 &&
@@ -224,16 +230,14 @@ document.addEventListener("keyup", (event) => {
     point++;
     check = 0;
     document.getElementById("hitt").innerHTML = "PERFECT";
-    document.getElementById("plus").innerHTML = "+1";
     hit.style.color = "yellow";
     hit.style.left = "44%";
-    plus.style.animation = "plus 1.25s linear";
     document.getElementById("hit").play();
     hit3.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
   } else if (
-    event.key === "k" &&
+    event.which === 75 &&
     check_x == 300 &&
     check_y <= 600 &&
     check_y > 500 &&
@@ -243,15 +247,13 @@ document.addEventListener("keyup", (event) => {
     point++;
     check = 0;
     document.getElementById("hitt").innerHTML = "PERFECT";
-    document.getElementById("plus").innerHTML = "+1";
     hit.style.color = "yellow";
     hit.style.left = "44%";
-    plus.style.animation = "plus 1.25s linear";
     hit4.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
   } else if (
-    event.key === "l" &&
+    event.which === 76 &&
     check_x == 400 &&
     check_y <= 600 &&
     check_y > 500 &&
@@ -261,10 +263,8 @@ document.addEventListener("keyup", (event) => {
     point++;
     check = 0;
     document.getElementById("hitt").innerHTML = "PERFECT";
-    document.getElementById("plus").innerHTML = "+1";
     hit.style.color = "yellow";
     hit.style.left = "44%";
-    plus.style.animation = "plus 1.25s linear";
     hit5.style.animation = "hit 0.15s alternate";
     document.getElementById("hit").play();
     document.getElementById("score").innerHTML = point;
@@ -275,8 +275,6 @@ document.addEventListener("keyup", (event) => {
     hit.style.left = "43%";
     hit.style.color = "red";
     document.getElementById("hitt").innerHTML = "TOO FAST";
-    diff.style.animation = "plus 1.25s linear";
-    document.getElementById("diff").innerHTML = "-1";
     setTimeout(function miss() {
       document.getElementById("miss").play();
     }, 800);
@@ -292,10 +290,6 @@ var timer = setInterval(() => {
     window.getComputedStyle(block).getPropertyValue("top")
   );
   if (check_y < 0) {
-    diff.style.animation = "";
-    document.getElementById("diff").innerHTML = "";
-    plus.style.animation = "";
-    document.getElementById("plus").innerHTML = "";
     document.getElementById("hitt").innerHTML = "";
     hit1.style.animation = "";
     hit2.style.animation = "";
@@ -307,8 +301,6 @@ var timer = setInterval(() => {
     console.log("miss");
     document.getElementById("miss").play();
     check = 3;
-    diff.style.animation = "plus 1.25s linear";
-    document.getElementById("diff").innerHTML = "-1";
     hit.style.left = "47%";
     hit.style.color = "red";
     document.getElementById("hitt").innerHTML = "MISS";
@@ -346,21 +338,60 @@ var timer = setInterval(() => {
     //location.reload();
     //alert("ขยะเน่าแล้วไอเวรร");
   }
-  if (point == 15 && check_y > 600) {
+  if (point == 3 && check_y > 600) {
     block.style.animation = "none";
-    block.style.animation = "slide 1.65s infinite";
+    block.style.animation = "slide 3.5s infinite";
   }
-  if (point == 25 && check_y > 600) {
+
+  if (point == 6 && check_y > 600) {
     block.style.animation = "none";
-    block.style.animation = "slide 1.25s infinite";
+    block.style.animation = "slide 3s infinite";
   }
+
+  if (point == 10 && check_y > 600) {
+    block.style.animation = "none";
+    block.style.animation = "slide 2.7s infinite";
+  }
+
+  if (point == 14 && check_y > 600) {
+    block.style.animation = "none";
+    block.style.animation = "slide 2.3s infinite";
+  }
+
+  if (point == 18 && check_y > 600) {
+    block.style.animation = "none";
+    block.style.animation = "slide 2s infinite";
+  }
+
+  if (point == 24 && check_y > 600) {
+    block.style.animation = "none";
+    block.style.animation = "slide 1.7s infinite";
+  }
+
+  if (point == 30 && check_y > 600) {
+    block.style.animation = "none";
+    block.style.animation = "slide 1.4s infinite";
+  }
+
+  if (point == 40 && check_y > 600) {
+    block.style.animation = "none";
+    block.style.animation = "slide 1.2s infinite";
+  }
+
   if (point == 50 && check_y > 600) {
     block.style.animation = "none";
-    block.style.animation = "slide 0.95s infinite";
+    block.style.animation = "slide 0.9s infinite";
   }
+
+  if (point == 100 && check_y > 600) {
+    block.style.animation = "none";
+    block.style.animation = "slide 0.5s infinite";
+  }
+
   if (check_y >= -100 && check_y <= 470) {
     block.style.opacity = "1";
   }
+  
   if (check_y > 470) {
     block.style.opacity = "0";
   }
