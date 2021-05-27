@@ -92,7 +92,6 @@ setTimeout(function(){
   
   window.addEventListener('scroll', function(event){
       reveal();
-      droptest();
       below();
   })
   function reveal() {
@@ -112,27 +111,6 @@ setTimeout(function(){
       if (revealerbottom < 350) {
           revealers.style.right = plastic.style.left = "";
           revealers.style.opacity = plastic.style.opacity = 0;
-      }
-  }
-  var check;
-  function droptest() {
-      if (check != 1){
-          var drop = document.querySelector(".drop-slide");
-          var windowheight = window.innerHeight;
-          var droptop = drop.getBoundingClientRect().top;
-          console.log(droptop,windowheight)
-          if (droptop < windowheight-300) {
-              console.log(droptop,windowheight,"Check") 
-              drop.style.opacity = 1;
-              drop.style.position = "fixed";
-              check = 1;
-          }
-          else{
-              drop.style.opacity = 0;
-          }
-          setTimeout(() => {
-              drop.remove();
-          }, 7000);
       }
   }
   
@@ -156,7 +134,14 @@ setTimeout(function(){
       }
   }
   
-  
+  function dropFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
   
   
   
