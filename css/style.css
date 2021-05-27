@@ -280,12 +280,12 @@ p.bin{
     left: 42%;
     width: 15%;
     height: 30%;
-    opacity: 1;
+    opacity: 0;
     background-image: url(../img/แก้วน้าม.png);
     transition: all 1s;
     animation: down-drop 5s ease-in infinite;
     animation-delay: 5s;
-    z-index: 10000;
+    z-index: 6;
     
 }
 .test-animation{
