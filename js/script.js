@@ -61,6 +61,7 @@ setTimeout(function(){
   function side_slide(event){showImg(num += event);}
   
   function showImg(event){
+      var txtca = document.querySelector(".bearrr");
       var i;
       const img = document.querySelectorAll(`.image-carousel`);
       const text = document.querySelectorAll(`#text-carousel`);
@@ -73,16 +74,59 @@ setTimeout(function(){
           img[i].style.opacity = '0';
           text[i].style.opacity = '0';
       }
-  
-      if(num-1 == 2){
+      if (num-1 == 1){
+        txtca.style.transition = "all 2s";
+          txtca.style.opacity = 0;
+          setTimeout(() => {
+            txtca.innerHTML = "ประเภทแรก";
+            txtca.style.opacity = 1;
+            setTimeout(() => {
+                txtca.style.transition = "0s";
+            }, 300);
+          }, 500);
+          txtca.style.left = "42.5%";
+        img[num-1].style.opacity = '1';
+        img[num-1].style.right = 35+'%';
+     }
+      else if(num-1 == 2){
+        txtca.style.transition = "all 2s";
+        txtca.style.opacity = 0;
+        setTimeout(() => {
+            txtca.innerHTML = "ประเภทที่สอง";
+          txtca.style.opacity = 1;
+          setTimeout(() => {
+              txtca.style.transition = "0s";
+          }, 300);
+        }, 500);
+        txtca.style.left = "42%";
           img[num-1].style.opacity = '1';
           img[num-1].style.right = 32+'%';
       }
       else if(num-1 == 3){
+        txtca.style.transition = "all 2s";
+        txtca.style.opacity = 0;
+        setTimeout(() => {
+            txtca.innerHTML = "ประเภทที่สอง";
+          txtca.style.opacity = 1;
+          setTimeout(() => {
+              txtca.style.transition = "0s";
+          }, 300);
+        }, 500);
+        txtca.style.left = "42%";
           img[num-1].style.opacity = '1';
           img[num-1].style.right = 33+'%';
       }
-      else{
+      else {
+        txtca.style.transition = "all 2s";
+        txtca.style.opacity = 0;
+        setTimeout(() => {
+            txtca.innerHTML = "ไมโครพลาสติก";
+          txtca.style.opacity = 1;
+          setTimeout(() => {
+              txtca.style.transition = "0s";
+          }, 300);
+        }, 500);
+        txtca.style.left = "41%";
           img[num-1].style.opacity = '1';
           img[num-1].style.right = 35+'%';
       }
@@ -92,6 +136,7 @@ setTimeout(function(){
   
   window.addEventListener('scroll', function(event){
       reveal();
+      droptest();
       below();
   })
   function reveal() {
@@ -113,6 +158,54 @@ setTimeout(function(){
           revealers.style.opacity = plastic.style.opacity = 0;
       }
   }
+  var check;
+  var ff = 0;
+  function droptest() {
+          var drop = document.querySelector(".drop-slide");
+          var windowheight = window.innerHeight;
+          var droptop = drop.getBoundingClientRect().top;
+        //   console.log(droptop,windowheight,"TEST = ",check)
+          if (droptop < windowheight) { 
+              if (check == 0 && ff > 10){
+                check = 1;
+                drop.style.animation = "down-drop 5s ease-in";
+                ff = 0;
+              }
+          }
+          else{
+              drop.style.opacity = 0;
+              drop.style.animation = "";
+              check = 0;
+              ff ++;
+          }
+        //   setTimeout(() => {
+        //       drop.remove();
+        //   }, 7000);
+
+
+    // var drop = document.querySelector(".drop-slide");
+    // var windowheight = window.innerHeight;
+    // var droptop = drop.getBoundingClientRect().top;
+    // var scoreY = window.scrollY;
+    // console.log(droptop, windowheight)
+    // if (droptop < windowheight && check != 1)  {
+    //     drop.style.opacity = 1;
+    //     drop.style.transform = "translateY(0px)";
+    //     check = 1;
+    // }
+    // else if (droptop < windowheight-800){
+    //     drop.style.opacity = 0;
+    // }
+    // else if (droptop < windowheight)  {
+    //     drop.style.opacity = 1;
+    //     num = scoreY-1700;
+    //     drop.style.transform = "translateY("+num*0.45+"px)";
+    // }
+    // else{
+    //     drop.style.opacity = 0;
+    //     check = 0;
+    // }
+  }
   
   function below() {
       var blow = document.querySelector('.check-below');
@@ -128,20 +221,13 @@ setTimeout(function(){
         bblock.style.transition = "all 2s";
       }
       else{
+          bblock.style.zIndex = "-10";
           bblock.style.opacity = 0;
           bblock.style.transition = "all 1s";
-          bblock.style.zIndex = "-10";
       }
   }
   
-  function dropFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
+  
   
   
   
