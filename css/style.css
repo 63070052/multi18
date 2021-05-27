@@ -984,7 +984,7 @@ section span{
     border-radius: 50px;
     position: absolute;
     background-position: center;
-    background-image: url(/img/click.png);
+    background-image: url(../img/click.png);
 
 }
 @keyframes drop {
@@ -1010,7 +1010,7 @@ div.testdrop{
     display:none;
     top: 100%;
     position: absolute;
-    background-image: url(/img/แก้วน้าม.png);
+    background-image: url(../img/แก้วน้าม.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 100%;
