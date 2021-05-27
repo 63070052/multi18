@@ -132,7 +132,7 @@ setTimeout(function(){
           }
           setTimeout(() => {
               drop.remove();
-          }, 7000);
+          }, 10000);
       }
   }
   
