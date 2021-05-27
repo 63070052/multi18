@@ -285,7 +285,7 @@ p.bin{
     transition: all 1s;
     animation: down-drop 5s ease-in infinite;
     animation-delay: 5s;
-    z-index: 6;
+    z-index: 10000;
     
 }
 .test-animation{
