@@ -121,7 +121,7 @@ setTimeout(function(){
           var windowheight = window.innerHeight;
           var droptop = drop.getBoundingClientRect().top;
           console.log(droptop,windowheight)
-          if (droptop < windowheight-300) {  
+          if (droptop < windowheight-300) {
               console.log(droptop,windowheight,"Check") 
               drop.style.opacity = 1;
               drop.style.position = "fixed";
@@ -155,4 +155,8 @@ setTimeout(function(){
           bblock.style.zIndex = "-10";
       }
   }
+  
+  
+  
+  
   
